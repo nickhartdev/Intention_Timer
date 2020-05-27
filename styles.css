@@ -1,1 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+body {
+  background-color: #2B2733;
+  color: #CBC9CF;
+}
+h1, h2 {
+  color: #46424D;
+}
+main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+article {
+  display: flex;
+  justify-content: center;
+}
+form-section {
+  display: grid;
+}
