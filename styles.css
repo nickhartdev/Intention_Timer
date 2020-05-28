@@ -8,7 +8,7 @@
 body {
   background-color: #2B2733;
   font-family: 'Monserrat', sans-serif;
-  color: #FFF;
+  color: #CBC9CF;
 }
 
 .main-header {
@@ -20,14 +20,28 @@ body {
   letter-spacing: .15em;
 }
 
-h1 {
+h1, h2, h3 {
   color: #FFF;
   font-weight: 300;
 }
 
 h2 {
-  font-weight: 300;
   font-size: .9em;
+}
+
+h3 {
+  font-size: .7em;
+}
+
+input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  padding-top: .75em;
+}
+
+input, select, textarea {
+  color: #CBC9CF;
 }
 
 main {
@@ -55,8 +69,51 @@ article {
   justify-content: space-between;
 }
 
+.category-button-image {
+  width: 20%;
+  height: 20%;
+  padding-bottom: 1%;
+}
+
+.category-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: inherit;
+  width: 22%;
+  height: 10%;
+  padding: 1em;
+  border-radius: 5%;
+  color: #FFF;
+  font-size: .7em;
+}
+
 .grey-line {
   background-color: #46424D;
+}
+
+.activity-prompt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.time-input {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+
+.second-input, .minute-input {
+  width: 42%;
+}
+
+.second-input > input, .minute-input > input {
+  width: 100%;
 }
 
 aside {
