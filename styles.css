@@ -27,13 +27,19 @@ h1, h2, h3 {
 
 h2 {
   font-size: 1.25em;
+  color: #CBC9CF;
+}
+
+h3 {
+  font-size: 1.15em;
 }
 
 input {
   background: transparent;
+  font-size: inherit;
   border: none;
   border-bottom: 1px solid white;
-  padding-top: 3.75em;
+  margin-top: 2em;
 }
 
 input, select, textarea {
@@ -56,9 +62,10 @@ article {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin: 2% 0%;
   padding: 7.5% 15%;
   background-color: #46424D;
-  height: 80vh;
+  /* height: 80vh; */
 }
 .select-category-container {
   height: 150px;
@@ -133,6 +140,7 @@ article {
   height: 90%;
   width: 30%;
   border-radius: 5%;
+  font-size: 1em;
 }
 
 aside {
