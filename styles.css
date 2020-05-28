@@ -7,6 +7,7 @@
 
 body {
   background-color: #2B2733;
+  font-family: 'Monserrat', sans-serif;
   color: #FFF;
 }
 
@@ -19,28 +20,43 @@ body {
   letter-spacing: .15em;
 }
 
-h1, h2 {
+h1 {
   color: #FFF;
-  font-family: 'Monserrat', sans-serif;
   font-weight: 300;
+}
 
+h2 {
+  font-weight: 300;
+  font-size: .9em;
 }
 
 main {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 2fr 1px 1fr;
 }
 
 article {
+  margin: 5%;
   display: flex;
   justify-content: flex-start;
   flex-flow: column;
-  margin: 5%;
 }
 
 .form-section {
+  padding: 7.5% 15%;
   background-color: #46424D;
   display: grid;
+}
+
+.category-button-container {
+  padding: 2% 0% 5% 0%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.grey-line {
+  background-color: #46424D;
 }
 
 aside {
