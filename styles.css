@@ -49,7 +49,7 @@ input, select, textarea {
 
 main {
   display: grid;
-  grid-template-columns: 2fr 1px 1fr;
+  grid-template-columns: 2fr 4px 1fr;
 }
 
 article {
@@ -152,4 +152,16 @@ aside {
   justify-content: flex-start;
   flex-flow: column;
   margin: 5%;
+  padding-top: 5.5%;
+}
+
+.past-activities {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.past-activities > p {
+  padding-bottom: .5em;
 }
