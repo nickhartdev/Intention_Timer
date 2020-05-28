@@ -65,7 +65,7 @@ article {
   margin: 2% 0%;
   padding: 7.5% 15%;
   background-color: #46424D;
-  /* height: 80vh; */
+  box-shadow: 7px 6px 7px 3px #26222D;
 }
 .select-category-container {
   height: 150px;
