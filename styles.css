@@ -55,6 +55,26 @@ article {
   justify-content: space-between;
 }
 
+.category-button-image {
+  width: 20%;
+  height: 20%;
+  padding-bottom: 1%;
+}
+
+.category-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: inherit;
+  width: 22%;
+  height: 10%;
+  padding: 1em;
+  border-radius: 5%;
+  color: #FFF;
+  font-size: .7em;
+}
+
 .grey-line {
   background-color: #46424D;
 }
