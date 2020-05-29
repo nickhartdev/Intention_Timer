@@ -12,19 +12,18 @@ body {
 }
 
 .main-header {
-  background-color: #46424D;
-  padding: 1.5%;
   display: flex;
   justify-content: center;
+  background-color: #46424D;
+  padding: 1.5%;
   font-size: .75em;
   letter-spacing: .15em;
 }
 
 h1, h2, h3 {
-  color: #FFF;
   font-weight: 300;
+  color: #FFF;
 }
-
 
 h2 {
   font-size: 1.5em;
@@ -36,15 +35,11 @@ h3 {
 }
 
 input {
-  background: transparent;
-  font-size: inherit;
+  background: inherit;
+  margin-top: 2em;
   border: none;
   border-bottom: 1px solid white;
-  margin-top: 2em;
-}
-
-input, select, textarea {
-  color: #CBC9CF;
+  font-size: inherit;
 }
 
 main {
@@ -53,37 +48,44 @@ main {
 }
 
 article {
-  margin: 5%;
   display: flex;
   justify-content: flex-start;
   flex-flow: column;
   height: 100%;
+  margin: 5%;
+}
+
+aside {
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: column;
+  margin: 5%;
+  padding-top: 5.5%;
+  text-align: center;
 }
 
 .form-section {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 68%;
+  background-color: #46424D;
   margin: 2% 0%;
   padding: 7.5% 15%;
-  background-color: #46424D;
   box-shadow: 7px 6px 7px 3px #26222D;
   border-radius: 1%;
-  height: 68%;
 }
 
 .select-category-container {
-  height: 30%;
-  margin-bottom:
+  height: 38%;
 }
 
 .category-button-container {
-  padding: 4% 0% 25% 0%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   height: 100%;
-
+  padding: 4% 0% 25% 0%;
 }
 
 .category-button-image {
@@ -101,8 +103,7 @@ article {
   height: 70px;
   padding: 1em;
   border-radius: 5%;
-  border-color: white;
-  border-style: solid;
+  border: white 1px solid;
   color: #FFF;
   font-size: inherit;
 }
@@ -115,17 +116,16 @@ article {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding-top: 1em;
-  padding-bottom: 1em;
   height: 20%;
+  padding: 1em 0em;
 }
 
 .time-input {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  margin-bottom: 1em;
   height: 20%;
+  margin-bottom: 1em;
   padding-top: 5%;
   padding-bottom: 5%;
 }
@@ -137,10 +137,6 @@ article {
   width: 42%;
 }
 
-.second-input > input, .minute-input > input {
-  width: 100%;
-}
-
 .submit-section {
   display: flex;
   justify-content: flex-end;
@@ -149,20 +145,11 @@ article {
 }
 
 .submit-button {
-  height: 30%;
+  height: 70%;
   width: 30%;
   border: 1px solid white;
   border-radius: 5%;
   font-size: .9em;
-}
-
-aside {
-  display: flex;
-  justify-content: flex-start;
-  flex-flow: column;
-  margin: 5%;
-  padding-top: 5.5%;
-  text-align: center;
 }
 
 .past-activities {
@@ -201,19 +188,35 @@ aside {
 }
 
 @media screen and (max-width: 620px) {
+  /* main {
+    grid-template-rows: 1.5fr .3% 1fr;
+    grid-template-columns: none;
+  } */
+
+
   .form-section {
     display: flex;
     justify-content: space-between;
     padding: 5%;
-    height: 100vh;
+    height: 85%;
   }
+
+  .past-activities {
+    padding-top: 5%;
+  }
+
   .select-category-container {
-    height: 50%;
+    height: 40%;
   }
+
+  .category-header {
+    padding-bottom: 3%;
+  }
+
   .category-button-container {
     flex-direction: column;
     align-items: center;
-    height: 85%;
+    height: 80%;
   }
 
   .category-button {
@@ -228,14 +231,17 @@ aside {
     width: 25%;
     padding-right: .75em;
   }
+
   .minute-input > input, .second-input > input {
     margin: 0;
   }
+
   .submit-section {
     display: flex;
     align-items: center;
     justify-content: center;
   }
+
   .submit-button {
     width: 75%;
     height: 60%;
