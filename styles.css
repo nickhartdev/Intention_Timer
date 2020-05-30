@@ -108,6 +108,33 @@ aside {
   font-size: inherit;
 }
 
+.active-study-button {
+  border-color: #B3FD78;
+  color: #B3FD78;
+}
+
+.active-study-button > img {
+  content: url('assets/study-active.svg');
+}
+
+.active-meditate-button {
+  border-color: #C278FD;
+  color: #C278FD;
+}
+
+.active-meditate-button > img {
+  content: url('assets/meditate-active.svg');
+}
+
+.active-exercise-button {
+  border-color: #FD8078;
+  color: #FD8078;
+}
+
+.active-exercise-button > img {
+ content: url('assets/exercise-active.svg')
+}
+
 .grey-line {
   background-color: #46424D;
 }
