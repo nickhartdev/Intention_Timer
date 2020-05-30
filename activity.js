@@ -8,9 +8,10 @@ class Activity {
     this.id = Date.now;
   }
 
-  startTimer();
+  startTimer() {}
 
-  markComplete();
-  
-  saveToStorage();
+  markComplete() {}
+
+  saveToStorage() {}
+
 }
