@@ -64,6 +64,10 @@ aside {
   text-align: center;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 .form-section {
   display: flex;
   flex-direction: column;
@@ -151,13 +155,13 @@ aside {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  height: 20%;
+  height: 25%;
   margin-bottom: 1em;
   padding-top: 5%;
   padding-bottom: 5%;
 }
 
-.second-input, .minute-input {
+.second-input-container, .minute-input-container {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -169,6 +173,10 @@ aside {
   justify-content: flex-end;
   align-items: flex-end;
   height: 15%;
+}
+
+.time-error-message {
+  padding-top: 5%;
 }
 
 .submit-button {
@@ -215,11 +223,6 @@ aside {
 }
 
 @media screen and (max-width: 620px) {
-  /* main {
-    grid-template-rows: 1.5fr .3% 1fr;
-    grid-template-columns: none;
-  } */
-
 
   .form-section {
     display: flex;
