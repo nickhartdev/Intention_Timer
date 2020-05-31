@@ -10,26 +10,27 @@ submitButton.addEventListener('click', validateTime);
 
 //event handlers
 function activateButtons(event) {
-  deactivateButtons(event);
-  if (event.target.id === 'study-button') {
-    event.target.classList.add('active-study-button');
-  } else if (event.target.id === 'meditate-button') {
-    event.target.classList.add('active-meditate-button');
-  } else if (event.target.id === 'exercise-button') {
-    event.target.classList.add('active-exercise-button');
-  }
-}
-
-function deactivateButtons(event) {
+  // parameter allows event to be DYNAMIC - event changes based on what user does -- event listener is waiting for the right event, which is an object
+  console.log(event.target); // event bubbling phase
   var studyButton = document.querySelector('#study-button');
   var meditateButton = document.querySelector('#meditate-button');
   var exerciseButton = document.querySelector('#exercise-button');
-  var activityArray = [studyButton, meditateButton, exerciseButton];
-
-  for (var i = 0; i < activityArray.length; i++) {
-    activityArray[i].classList.remove('active-study-button', 'active-meditate-button', 'active-exercise-button');
+  if (event.target.id === 'study-button') {
+    event.target.classList.add('active-study-button');
+    meditateButton.classList.remove('active-meditate-button');
+    exerciseButton.classList.remove('active-exercise-button');
+    // would need button query selectors - can either be gloal or local if only this file
+  } else if (event.target.id === 'meditate-button') {
+    event.target.classList.add('active-meditate-button');
+    exerciseButton.classList.remove('active-exercise-button');
+    studyButton.classList.remove('active-study-button');
+  } else if (event.target.id === 'exercise-button') {
+    event.target.classList.add('active-exercise-button');
+    meditateButton.classList.remove('active-meditate-button');
+    studyButton.classList.remove('active-study-button');
   }
 }
+
 function validateTime() {
   validateMinutes();
   validateSeconds();
