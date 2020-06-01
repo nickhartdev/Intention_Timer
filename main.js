@@ -27,7 +27,6 @@ function activateButtons(event) {
     event.target.classList.add('active-study-button');
     meditateButton.classList.remove('active-meditate-button');
     exerciseButton.classList.remove('active-exercise-button');
-    // would need button query selectors - can either be gloal or local if only this file
   } else if (event.target.id === 'meditate-button') {
     event.target.classList.add('active-meditate-button');
     exerciseButton.classList.remove('active-exercise-button');
@@ -39,44 +38,56 @@ function activateButtons(event) {
   }
 }
 
+function validateForm() {
+  validateTime();
+  validateCategory();
+  validateDescription();
+}
+
 function validateTime() {
-  // isItE(minuteInput);
-  // isItE(secondInput);
   validateMinutes();
   validateSeconds();
 }
 
+function validateCategory() {
+  var categoryErrorMessage = document.querySelector('.category-error-message');
+  var buttonArray = [studyButton, meditateButton, exerciseButton];
+  for (var i = 0; i < buttonArray.length; i++) {
+    if (buttonArray[i].classList.length === 2) {
+      categoryErrorMessage.classList.add('hidden');
+    } else {
+      categoryErrorMessage.classList.remove('hidden');
+    }
+  }
+}
+
+function validateDescription() {
+  var descriptionField = document.querySelector('.activity-description-input');
+  var descriptionErrorMessage = document.querySelector('.description-error-message');
+  if (descriptionField.value.length > 0) {
+    descriptionErrorMessage.classList.add('hidden');
+  } else {
+    descriptionErrorMessage.classList.remove('hidden');
+  }
+}
+
 function validateMinutes() {
   var minuteError = document.querySelector('.minute-error-message');
-  if (minuteInput.value <= 59 && minuteInput.value >= 0) {
+  if (minuteInput.value <= 59 && minuteInput.value >= 0 && minuteInput.value.length > 0) {
     minuteError.classList.add("hidden");
-  }else {
+  } else {
     minuteError.classList.remove("hidden");
   }
 }
 
 function validateSeconds() {
   var secondError = document.querySelector('.second-error-message');
-  if (secondInput.value <= 59 && secondInput.value >= 0) {
+  if (secondInput.value <= 59 && secondInput.value >= 0 && secondInput.value.length > 0) {
     secondError.classList.add("hidden");
   } else {
     secondError.classList.remove("hidden");
   }
 }
-
-// var trueOrFalse = true;
-
-// function isItE(input) {
-//   var string = input.value.toString();
-//   var stringArray = string.split();
-//   for (var i = 0; i < stringArray.length; i++) {
-//     if (stringArray[i] === 'e') {
-//       return true;
-//     } else {
-//       return false;
-//     }
-//   }
-// }
 
 function createEvent() {
   var category = '';
@@ -99,6 +110,6 @@ function hideForm() {
 }
 
 function startActivity() {
-  validateTime();
+  validateForm();
   createEvent();
 }

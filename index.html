@@ -19,26 +19,30 @@
           <div class="select-category-container">
             <h3 class="category-header">Select a category:</h3>
             <div class="category-button-container">
-              <button id="study-button" class="category-button"><img src="assets/study.svg" class="category-button-image">Study</button>
-              <button id="meditate-button" class="category-button"><img src="assets/meditate.svg" class="category-button-image">Meditate</button>
-              <button id="exercise-button" class="category-button"><img src="assets/exercise.svg" class="category-button-image">Exercise</button>
+              <button id="study-button" class="category-button"><img src="assets/study.svg" id="study-image" class="category-button-image">Study</button>
+              <button id="meditate-button" class="category-button"><img src="assets/meditate.svg" id="meditate-image" class="category-button-image">Meditate</button>
+              <button id="exercise-button" class="category-button"><img src="assets/exercise.svg" id="exercise-image" class="category-button-image">Exercise</button>
+              <div>
+                <img src="assets/warning.svg">
+                <p class="error-message-style category-error-message hidden">Please choose a category.</p>
+              </div>
             </div>
           </div>
           <div class="activity-prompt">
             <h3>What would you like to accomplish during this time?</h3>
             <input class="activity-description-input"></input>
-            <p class="description-error-message"></p>
+            <p class="error-message-style description-error-message hidden">A description is required.</p>
           </div>
           <div class="time-input">
             <div class="minute-input-container">
               <h3>Minutes</h3>
               <input class="minute-input" type="number"></input>
-              <p class="minute-error-message hidden">Please enter a number between 1 and 59.</p>
+              <p class="error-message-style minute-error-message hidden">Please enter a number between 0 and 59.</p>
             </div>
             <div class="second-input-container">
               <h3>Seconds</h3>
               <input class="second-input" type="number"></input>
-              <p class="second-error-message hidden">Please enter a number between 1 and 59.</p>
+              <p class="error-message-style second-error-message hidden">Please enter a number between 0 and 59.</p>
             </div>
           </div>
           <div class="submit-section">
