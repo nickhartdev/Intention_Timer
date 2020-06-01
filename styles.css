@@ -117,6 +117,10 @@ aside {
   color: #B3FD78;
 }
 
+.category-error-message {
+  align-self: center;
+}
+
 .active-study-button > img {
   content: url('assets/study-active.svg');
 }
