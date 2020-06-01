@@ -81,7 +81,8 @@ aside {
 }
 
 .select-category-container {
-  height: 38%;
+  height: 25%;
+  margin-bottom: 15%;
 }
 
 .category-button-container {
@@ -89,7 +90,7 @@ aside {
   flex-direction: row;
   justify-content: space-between;
   height: 100%;
-  padding: 4% 0% 25% 0%;
+  padding: 4% 0% 4% 0%;
 }
 
 .category-button-image {
@@ -117,8 +118,13 @@ aside {
   color: #B3FD78;
 }
 
-.category-error-message {
-  align-self: center;
+.warning-image {
+  width: 15px;
+}
+.category-error-message, .description-error-message, .minute-error-message, .second-error-message{
+  display: flex;
+  align-content: center;
+  color: #EFB7EC;
 }
 
 .active-study-button > img {
