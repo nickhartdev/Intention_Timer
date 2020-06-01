@@ -8,8 +8,14 @@ var activitiesArray = [];
 var studyButton = document.querySelector('#study-button');
 var meditateButton = document.querySelector('#meditate-button');
 var exerciseButton = document.querySelector('#exercise-button');
+var invalidCharacters = [ 'e', 'E', '+', '-' , '.' ];
 
 //event listeners
+minuteInput.addEventListener('keydown', function(event) {
+  if (invalidCharacters.includes(event.key)) {
+    event.preventDefault();
+  }
+});
 activityButtons.addEventListener('click', activateButtons);
 submitButton.addEventListener('click', startActivity);
 
@@ -34,6 +40,8 @@ function activateButtons(event) {
 }
 
 function validateTime() {
+  // isItE(minuteInput);
+  // isItE(secondInput);
   validateMinutes();
   validateSeconds();
 }
@@ -51,10 +59,24 @@ function validateSeconds() {
   var secondError = document.querySelector('.second-error-message');
   if (secondInput.value <= 59 && secondInput.value >= 0) {
     secondError.classList.add("hidden");
-  }else {
+  } else {
     secondError.classList.remove("hidden");
   }
 }
+
+// var trueOrFalse = true;
+
+// function isItE(input) {
+//   var string = input.value.toString();
+//   var stringArray = string.split();
+//   for (var i = 0; i < stringArray.length; i++) {
+//     if (stringArray[i] === 'e') {
+//       return true;
+//     } else {
+//       return false;
+//     }
+//   }
+// }
 
 function createEvent() {
   var category = '';
@@ -69,6 +91,11 @@ function createEvent() {
   console.log(newInstance);
   activitiesArray.push(newInstance);
   console.log(activitiesArray);
+}
+
+function hideForm() {
+  var formSection = document.querySelector('.form-section');
+  formSection.classList.add('hidden');
 }
 
 function startActivity() {
