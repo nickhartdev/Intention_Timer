@@ -55,7 +55,7 @@ function validateCategory() {
   for (var i = 0; i < buttonArray.length; i++) {
     if (buttonArray[i].classList.length > 1) {
       categoryErrorMessage.classList.add('hidden');
-      return;
+      return true;
     }
   }
   categoryErrorMessage.classList.remove('hidden');
@@ -114,12 +114,9 @@ function hideForm() {
 }
 
 function startActivity() {
-  var cate = document.querySelector('.category-error-message');
-
   validateForm();
   if (validateCategory() === true && activityDescriptionInput.value.length > 0 && minuteInput.value.length > 0 && secondInput.value.length > 0) {
-    console.log('hello');
+    hideForm();
+    createEvent();
   }
-  createEvent();
-  // hideForm();
 }
