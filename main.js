@@ -4,6 +4,8 @@ var submitButton = document.querySelector('.submit-button');
 var activityDescriptionInput = document.querySelector('.activity-description-input');
 var minuteInput = document.querySelector('.minute-input');
 var secondInput = document.querySelector('.second-input');
+var minuteError = document.querySelector('.minute-error-message');
+var secondError = document.querySelector('.second-error-message');
 var activitiesArray = [];
 var studyButton = document.querySelector('#study-button');
 var meditateButton = document.querySelector('#meditate-button');
@@ -43,14 +45,10 @@ function activateButtons(event) {
 }
 
 function validateForm() {
-  validateTime();
+  validateTime(minuteInput, minuteError);
+  validateTime(secondInput, secondError);
   validateCategory();
   validateDescription();
-}
-
-function validateTime() {
-  validateMinutes();
-  validateSeconds();
 }
 
 function validateCategory() {
@@ -75,21 +73,11 @@ function validateDescription() {
   }
 }
 
-function validateMinutes() {
-  var minuteError = document.querySelector('.minute-error-message');
-  if (minuteInput.value <= 59 && minuteInput.value >= 0 && minuteInput.value.length > 0) {
-    minuteError.classList.add("hidden");
+function validateTime(time, errorMessage) {
+  if (time.value <= 59 && time.value >= 0 && time.value.length > 0) {
+    errorMessage.classList.add("hidden");
   } else {
-    minuteError.classList.remove("hidden");
-  }
-}
-
-function validateSeconds() {
-  var secondError = document.querySelector('.second-error-message');
-  if (secondInput.value <= 59 && secondInput.value >= 0 && secondInput.value.length > 0) {
-    secondError.classList.add("hidden");
-  } else {
-    secondError.classList.remove("hidden");
+    errorMessage.classList.remove("hidden");
   }
 }
 
