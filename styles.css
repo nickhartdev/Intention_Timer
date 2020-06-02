@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
 
+/* Element Styling */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11,14 +13,6 @@ body {
   color: #CBC9CF;
 }
 
-.main-header {
-  display: flex;
-  justify-content: center;
-  background-color: #46424D;
-  padding: 1.5%;
-  font-size: .75em;
-  letter-spacing: .15em;
-}
 
 h1, h2, h3 {
   font-weight: 300;
@@ -72,6 +66,8 @@ aside {
   text-align: center;
 }
 
+/* Visibility */
+
 .hidden {
   visibility: hidden;
 }
@@ -79,6 +75,18 @@ aside {
 .none {
   display: none !important;
 }
+
+/* New Activity Page */
+
+.main-header {
+  display: flex;
+  justify-content: center;
+  background-color: #46424D;
+  padding: 1.5%;
+  font-size: .75em;
+  letter-spacing: .15em;
+}
+
 
 .form-section, .timer-section {
   display: flex;
@@ -92,38 +100,6 @@ aside {
   border-radius: 1%;
 }
 
-.timer-section {
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-.timer-section > h2 {
-  color: white;
-}
-.timer-section > p {
-  font-size: 4em;
-  font-weight: bold;
-  color: white;
-  padding-bottom: 1rem;
-}
-
-.start-button {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  width: 5.5em;
-  height: 5.5em;
-  background-color: inherit;
-  border: 2px solid white;
-  border-radius: 50%;
-  padding: 3.5em 4em 4.5em 4em;
-  margin: 1em;
-  font-size: 1.5em;
-}
-
-.start-button > p {
-  color: white;
-}
 .select-category-container {
   display: flex;
   flex-direction: column;
@@ -160,56 +136,6 @@ aside {
   font-size: inherit;
 }
 
-.active-study-button {
-  border-color: #B3FD78;
-  color: #B3FD78;
-}
-
-.warning-image {
-  width: 15px;
-}
-
-.category-error-message, .description-error-message, .minute-error-message, .second-error-message {
-  display: flex;
-  align-content: center;
-}
-
-.error-message-style {
-  color: #EFB7EC;
-  padding: 5%;
-  width: 100%;
-}
-
-.category-error-message {
-  padding: 5% 0%;
-}
-
-.active-study-button > img {
-  content: url('assets/study-active.svg');
-}
-
-.active-meditate-button {
-  border-color: #C278FD;
-  color: #C278FD;
-}
-
-.active-meditate-button > img {
-  content: url('assets/meditate-active.svg');
-}
-
-.active-exercise-button {
-  border-color: #FD8078;
-  color: #FD8078;
-}
-
-.active-exercise-button > img {
- content: url('assets/exercise-active.svg')
-}
-
-.grey-line {
-  background-color: #46424D;
-}
-
 .activity-prompt {
   display: flex;
   flex-direction: column;
@@ -241,16 +167,16 @@ aside {
   height: 10%;
 }
 
-.time-error-message {
-  padding-top: 5%;
-}
-
 .submit-button {
   height: 100%;
   width: 30%;
   border: 1px solid white;
   border-radius: 5%;
   font-size: .9em;
+}
+
+.grey-line {
+  background-color: #46424D;
 }
 
 .past-activities {
@@ -267,6 +193,100 @@ aside {
 .past-activities > p {
   padding-bottom: .5em;
 }
+
+/* Timer Page */
+
+.timer-section {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.timer-section > h2 {
+  color: white;
+}
+
+.timer-section > p {
+  font-size: 4em;
+  font-weight: bold;
+  color: white;
+  padding-bottom: 1rem;
+}
+
+.start-button {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 5.5em;
+  height: 5.5em;
+  background-color: inherit;
+  border: 2px solid white;
+  border-radius: 50%;
+  padding: 3.5em 4em 4.5em 4em;
+  margin: 1em;
+  font-size: 1.5em;
+}
+
+.start-button > p {
+  color: white;
+}
+
+/* Error Messages */
+
+.warning-image {
+  width: 15px;
+}
+
+.category-error-message, .description-error-message, .minute-error-message, .second-error-message {
+  display: flex;
+  align-content: center;
+}
+
+.error-message-style {
+  color: #EFB7EC;
+  padding: 5%;
+  width: 100%;
+}
+
+.category-error-message {
+  padding: 5% 0%;
+}
+
+.time-error-message {
+  padding-top: 5%;
+}
+
+
+/* Category Button Active States */
+
+.active-study-button {
+  border-color: #B3FD78;
+  color: #B3FD78;
+}
+
+.active-study-button > img {
+  content: url('assets/study-active.svg');
+}
+
+.active-meditate-button {
+  border-color: #C278FD;
+  color: #C278FD;
+}
+
+.active-meditate-button > img {
+  content: url('assets/meditate-active.svg');
+}
+
+.active-exercise-button {
+  border-color: #FD8078;
+  color: #FD8078;
+}
+
+.active-exercise-button > img {
+  content: url('assets/exercise-active.svg')
+}
+
+/* Media Queries */
 
 @media screen and (max-width: 900px) {
   main {
