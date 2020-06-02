@@ -76,7 +76,7 @@ aside {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 68%;
+  height: 80%;
   background-color: #46424D;
   margin: 2% 0%;
   padding: 7.5% 15%;
@@ -85,16 +85,19 @@ aside {
 }
 
 .select-category-container {
-  height: 25%;
-  margin-bottom: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 2%;
+  height: 30%;
 }
 
 .category-button-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 100%;
-  padding: 4% 0% 4% 0%;
+  height: 30%;
+  padding-top: 4%;
 }
 
 .category-button-image {
@@ -125,10 +128,20 @@ aside {
 .warning-image {
   width: 15px;
 }
-.category-error-message, .description-error-message, .minute-error-message, .second-error-message{
+
+.category-error-message, .description-error-message, .minute-error-message, .second-error-message {
   display: flex;
   align-content: center;
+}
+
+.error-message-style {
   color: #EFB7EC;
+  padding: 5%;
+  width: 100%;
+}
+
+.category-error-message {
+  padding: 5% 0%;
 }
 
 .active-study-button > img {
@@ -161,7 +174,7 @@ aside {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 20%;
+  height: 15%;
   padding: 1em 0em;
 }
 
@@ -171,7 +184,6 @@ aside {
   justify-content: space-between;
   height: 25%;
   margin-bottom: 1em;
-  padding-top: 5%;
   padding-bottom: 5%;
 }
 
@@ -186,7 +198,7 @@ aside {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  height: 15%;
+  height: 10%;
 }
 
 .time-error-message {
@@ -194,7 +206,7 @@ aside {
 }
 
 .submit-button {
-  height: 70%;
+  height: 100%;
   width: 30%;
   border: 1px solid white;
   border-radius: 5%;
@@ -250,7 +262,7 @@ aside {
   }
 
   .select-category-container {
-    height: 40%;
+    height: 57%;
   }
 
   .category-header {
@@ -274,6 +286,19 @@ aside {
   .category-button-image {
     width: 25%;
     padding-right: .75em;
+  }
+
+  .category-error-message {
+    padding-top: 0;
+  }
+
+  .description-error-message {
+    padding-bottom: 7%;
+  }
+
+  .time-input {
+    padding-bottom: 0;
+    margin-bottom: 0;
   }
 
   .minute-input > input, .second-input > input {
