@@ -21,20 +21,24 @@ submitButton.addEventListener('click', startActivity);
 
 //event handlers
 function activateButtons(event) {
+  var startButton = document.querySelector('.start-button');
   // parameter allows event to be DYNAMIC - event changes based on what user does -- event listener is waiting for the right event, which is an object
   console.log(event.target); // event bubbling phase
   if (event.target.id === 'study-button') {
     event.target.classList.add('active-study-button');
     meditateButton.classList.remove('active-meditate-button');
     exerciseButton.classList.remove('active-exercise-button');
+    startButton.classList.add('active-study-button');
   } else if (event.target.id === 'meditate-button') {
     event.target.classList.add('active-meditate-button');
     exerciseButton.classList.remove('active-exercise-button');
     studyButton.classList.remove('active-study-button');
+    startButton.classList.add('active-meditate-button');
   } else if (event.target.id === 'exercise-button') {
     event.target.classList.add('active-exercise-button');
     meditateButton.classList.remove('active-meditate-button');
     studyButton.classList.remove('active-study-button');
+    startButton.classList.add('active-exercise-button');
   }
 }
 
