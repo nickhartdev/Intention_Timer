@@ -7,6 +7,7 @@ var minuteInput = document.querySelector('.minute-input');
 var secondInput = document.querySelector('.second-input');
 var minuteError = document.querySelector('.minute-error-message');
 var secondError = document.querySelector('.second-error-message');
+var countdownClock = document.querySelector('.countdown-clock');
 
 var activitiesArray = [];
 
@@ -83,10 +84,13 @@ function hideForm() {
   activityHeader.innerHTML = 'Current Activity';
 }
 
-function createEvent() {
+function createActivity() {
   var category = '';
-  var newInstance = new Activity(category, activityDescriptionInput.value, minuteInput.value, secondInput.value);
-
+  var newActivity = new Activity(category, activityDescriptionInput.value, minuteInput.value, secondInput.value);
+  var studyButton = document.querySelector('#study-button');
+  var meditateButton = document.querySelector('#meditate-button');
+  var exerciseButton = document.querySelector('#exercise-button');
+// how to do this without lines 94-99; pulling category from DOM
   if (studyButton.classList.length === 2) {
     category = 'study';
   } else if (meditateButton.classList.length === 2) {
@@ -94,13 +98,28 @@ function createEvent() {
   } else if (exerciseButton.classList.length === 2) {
     category = 'exercise';
   }
-  activitiesArray.push(newInstance);
+  activitiesArray.push(newActivity);
 }
 
 function startActivity() {
   validateForm();
   if (validateCategory() === true && activityDescriptionInput.value.length > 0 && minuteInput.value.length > 0 && secondInput.value.length > 0) {
     hideForm();
-    createEvent();
+    createActivity();
+    activitiesArray[0].startTimer();
+
   }
+}
+
+function countdown() {
+  setInterval(function() {
+    countdownClock.innerHTML = `${activitiesArray[0].minutes}:${activitiesArray[0].seconds}`
+    console.log(activitiesArray[0].seconds);
+    activitiesArray[0].seconds > 0 ? activitiesArray[0].seconds-- : activitiesArray[0].seconds;
+    if (activitiesArray[0].seconds === 0) {
+      return alert('hi');
+    }
+  }, 1000)
+
+
 }
