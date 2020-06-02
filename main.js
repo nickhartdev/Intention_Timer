@@ -112,4 +112,5 @@ function hideForm() {
 function startActivity() {
   validateForm();
   createEvent();
+  hideForm();
 }
