@@ -106,7 +106,11 @@ function createEvent() {
 
 function hideForm() {
   var formSection = document.querySelector('.form-section');
-  formSection.classList.add('hidden');
+  var activityHeader = document.querySelector('.activity-header');
+  var timerSection = document.querySelector('.timer-section');
+  formSection.classList.add('none');
+  timerSection.classList.remove('none');
+  activityHeader.innerHTML = 'Current Activity';
 }
 
 function startActivity() {
