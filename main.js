@@ -110,16 +110,25 @@ function startActivity() {
 
   }
 }
-
+// direct the received values of minutes and seconds to appear in two digit format
+// direct the two digits to cycle in seconds from 59 to 00
+// when seconds hit 00 they go to 59
+//if seconds hit 00 subtract 01 from minutes
+//when minutes and seconds are both 00 the timer stops
+//when mintues and seconds are both 00 the start button text changes
 function countdown() {
   setInterval(function() {
-    countdownClock.innerHTML = `${activitiesArray[0].minutes}:${activitiesArray[0].seconds}`
-    console.log(activitiesArray[0].seconds);
-    activitiesArray[0].seconds > 0 ? activitiesArray[0].seconds-- : activitiesArray[0].seconds;
-    if (activitiesArray[0].seconds === 0) {
-      return alert('hi');
+    countdownClock.innerHTML = `${activitiesArray[0].minutes}:${activitiesArray[0].seconds}`;
+    if (activitiesArray[0].seconds < 10) {
+    countdownClock.innerHTML= `${activitiesArray[0].minutes}:0${activitiesArray[0].seconds}`;
+    }else {
+    countdownClock.innerHTML= `${activitiesArray[0].minutes}:${activitiesArray[0].seconds}`;
     }
+    // countdownClock.innerHTML = `${activitiesArray[0].minutes}:${activitiesArray[0].seconds}`
+    // console.log(activitiesArray[0].seconds);
+    activitiesArray[0].seconds > 0 ? activitiesArray[0].seconds-- : activitiesArray[0].seconds;
+    // if (activitiesArray[0].seconds === 0) {
+    //   return alert('hi');
+    // }
   }, 1000)
-
-
 }
