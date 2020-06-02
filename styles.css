@@ -38,6 +38,10 @@ button > * {
   pointer-events: none;
 }
 
+button > #text {
+  pointer-events: auto;
+}
+
 input {
   background: inherit;
   margin-top: 2em;

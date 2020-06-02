@@ -53,12 +53,12 @@ function validateCategory() {
   var categoryErrorMessage = document.querySelector('.category-error-message');
   var buttonArray = [studyButton, meditateButton, exerciseButton];
   for (var i = 0; i < buttonArray.length; i++) {
-    if (buttonArray[i].classList.length === 2) {
+    if (buttonArray[i].classList.length > 1) {
       categoryErrorMessage.classList.add('hidden');
-    } else {
-      categoryErrorMessage.classList.remove('hidden');
+      return true;
     }
   }
+  categoryErrorMessage.classList.remove('hidden');
 }
 
 function validateDescription() {
@@ -115,6 +115,8 @@ function hideForm() {
 
 function startActivity() {
   validateForm();
-  createEvent();
-  hideForm();
+  if (validateCategory() === true && activityDescriptionInput.value.length > 0 && minuteInput.value.length > 0 && secondInput.value.length > 0) {
+    hideForm();
+    createEvent();
+  }
 }
