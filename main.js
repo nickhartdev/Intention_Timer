@@ -13,18 +13,7 @@ var activitiesArray = [];
 
 activityButtons.addEventListener('click', activateButtons);
 submitButton.addEventListener('click', startActivity);
-startButton.addEventListener('click', function() {
-  var countdown = setInterval(function() {
-    countdownClock.innerHTML = `${activitiesArray[0].minutes}:${activitiesArray[0].seconds}`;
-    addZeroes();
-    if (activitiesArray[0].minutes > 0) {
-      activitiesArray[0].seconds > 0 ? activitiesArray[0].seconds-- : activitiesArray[0].seconds = 59;
-      activitiesArray[0].seconds === 59 ? activitiesArray[0].minutes-- : activitiesArray[0].minutes;
-    } else {
-      activitiesArray[0].seconds > 0 ? activitiesArray[0].seconds-- : alert('very cautious WE DID IT'), clearInterval(countdown);
-    }
-  }, 1000);
-});
+startButton.addEventListener('click', activateTimer);
 minuteInput.addEventListener('keydown', function(event) {
   var invalidCharacters = [ 'e', 'E', '+', '-' , '.' ];
 
@@ -94,6 +83,8 @@ function hideForm() {
   formSection.classList.add('none');
   timerSection.classList.remove('none');
   activityHeader.innerHTML = 'Current Activity';
+  countdownClock.innerHTML = `${activitiesArray[0].minutes}:${activitiesArray[0].seconds}`;
+  addZeroes(activitiesArray[0].minutes, activitiesArray[0].seconds);
 }
 
 function createActivity() {
@@ -113,30 +104,25 @@ function createActivity() {
   activitiesArray.push(newActivity);
 }
 
+function addZeroes(minutes, seconds) {
+  if (minutes < 10 && seconds < 10) {
+    countdownClock.innerHTML = `0${minutes}:0${seconds}`;
+  } else if (seconds < 10) {
+    countdownClock.innerHTML = `${minutes}:0${seconds}`;
+  } else if (minutes < 10) {
+    countdownClock.innerHTML = `0${minutes}:${seconds}`;
+  }
+}
+
 function startActivity() {
   validateForm();
   if (validateCategory() === true && activityDescriptionInput.value.length > 0 && minuteInput.value.length > 0 && secondInput.value.length > 0) {
     createActivity();
-    activitiesArray[0].startTimer();
     hideForm();
   }
 }
 
-
-
-function cancelTimer() {
-  var countdownFunction = setInterval(countdown, 1000);
-
-  clearInterval(countdownFunction);
-  return countdownFunction;
-}
-
-function addZeroes() {
-    if (activitiesArray[0].minutes < 10 && activitiesArray[0].seconds < 10) {
-    countdownClock.innerHTML = `0${activitiesArray[0].minutes}:0${activitiesArray[0].seconds}`;
-    } else if (activitiesArray[0].seconds < 10) {
-    countdownClock.innerHTML = `${activitiesArray[0].minutes}:0${activitiesArray[0].seconds}`;
-    } else if (activitiesArray[0].minutes < 10) {
-    countdownClock.innerHTML = `0${activitiesArray[0].minutes}:${activitiesArray[0].seconds}`;
-  }
+function activateTimer() {
+  createActivity();
+  activitiesArray[0].startTimer();
 }
