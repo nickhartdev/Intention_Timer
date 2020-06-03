@@ -8,7 +8,6 @@ class Activity {
     this.id = Date.now;
   }
 
-
   startTimer() {
     var minutes = this.minutes;
     var seconds = this.seconds;
@@ -39,11 +38,9 @@ class Activity {
         minutes--;
       }
     }
-
   }
 
   markComplete() {}
 
   saveToStorage() {}
-
 }
