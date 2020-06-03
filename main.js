@@ -118,6 +118,7 @@ function startActivity() {
   validateForm();
   if (validateCategory() === true && activityDescriptionInput.value.length > 0 && minuteInput.value.length > 0 && secondInput.value.length > 0) {
     createActivity();
+    displayTimerTitle();
     hideForm();
   }
 }
@@ -125,4 +126,9 @@ function startActivity() {
 function activateTimer() {
   createActivity();
   activitiesArray[0].startTimer();
+}
+
+function displayTimerTitle() {
+  var description = document.querySelector('.timer-title')
+  description.innerText = `${activitiesArray[0].description}`;
 }
