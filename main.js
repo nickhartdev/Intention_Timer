@@ -8,7 +8,6 @@ var secondInput = document.querySelector('.second-input');
 var minuteError = document.querySelector('.minute-error-message');
 var secondError = document.querySelector('.second-error-message');
 var countdownClock = document.querySelector('.countdown-clock');
-
 var activitiesArray = [];
 
 activityButtons.addEventListener('click', activateButtons);
@@ -21,20 +20,34 @@ minuteInput.addEventListener('keydown', function(event) {
     event.preventDefault();
   }
 });
+secondInput.addEventListener('keydown', function(event) {
+  var invalidCharacters = [ 'e', 'E', '+', '-' , '.' ];
+
+  if (invalidCharacters.includes(event.key)) {
+    event.preventDefault();
+  }
+});
 
 function activateButtons(event) {
   for (var i = 0; i < buttonArray.length; i++) {
     buttonArray[i].classList.remove('active-study-button', 'active-meditate-button', 'active-exercise-button');
     if (event.target.id === 'study-button') {
       event.target.classList.add('active-study-button');
-      startButton.classList.add('active-study-button');
     } else if (event.target.id === 'meditate-button') {
       event.target.classList.add('active-meditate-button');
-      startButton.classList.add('active-meditate-button');
     } else if (event.target.id === 'exercise-button') {
       event.target.classList.add('active-exercise-button');
-      startButton.classList.add('active-exercise-button');
     }
+  }
+  assignButtonColor();
+}
+function assignButtonColor() {
+  if (event.target.id === 'study-button') {
+    startButton.classList.add('active-study-button');
+  } else if (event.target.id === 'meditate-button') {
+    startButton.classList.add('active-meditate-button');
+  } else if (event.target.id === 'exercise-button') {
+    startButton.classList.add('active-exercise-button');
   }
 }
 
