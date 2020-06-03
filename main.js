@@ -13,6 +13,7 @@ var activitiesArray = [];
 
 activityButtons.addEventListener('click', activateButtons);
 submitButton.addEventListener('click', startActivity);
+startButton.addEventListener('click', activateTimer);
 minuteInput.addEventListener('keydown', function(event) {
   var invalidCharacters = [ 'e', 'E', '+', '-' , '.' ];
 
@@ -82,6 +83,8 @@ function hideForm() {
   formSection.classList.add('none');
   timerSection.classList.remove('none');
   activityHeader.innerHTML = 'Current Activity';
+  countdownClock.innerHTML = `${activitiesArray[0].minutes}:${activitiesArray[0].seconds}`;
+  addZeroes(activitiesArray[0].minutes, activitiesArray[0].seconds);
 }
 
 function createActivity() {
@@ -101,25 +104,31 @@ function createActivity() {
   activitiesArray.push(newActivity);
 }
 
-function startActivity() {
-  validateForm();
-  if (validateCategory() === true && activityDescriptionInput.value.length > 0 && minuteInput.value.length > 0 && secondInput.value.length > 0) {
-    hideForm();
-    createActivity();
-    activitiesArray[0].startTimer();
-
+function addZeroes(minutes, seconds) {
+  if (minutes < 10 && seconds < 10) {
+    countdownClock.innerHTML = `0${minutes}:0${seconds}`;
+  } else if (seconds < 10) {
+    countdownClock.innerHTML = `${minutes}:0${seconds}`;
+  } else if (minutes < 10) {
+    countdownClock.innerHTML = `0${minutes}:${seconds}`;
   }
 }
 
-function countdown() {
-  setInterval(function() {
-    countdownClock.innerHTML = `${activitiesArray[0].minutes}:${activitiesArray[0].seconds}`
-    console.log(activitiesArray[0].seconds);
-    activitiesArray[0].seconds > 0 ? activitiesArray[0].seconds-- : activitiesArray[0].seconds;
-    if (activitiesArray[0].seconds === 0) {
-      return alert('hi');
-    }
-  }, 1000)
+function startActivity() {
+  validateForm();
+  if (validateCategory() === true && activityDescriptionInput.value.length > 0 && minuteInput.value.length > 0 && secondInput.value.length > 0) {
+    createActivity();
+    displayTimerTitle();
+    hideForm();
+  }
+}
 
+function activateTimer() {
+  createActivity();
+  activitiesArray[0].startTimer();
+}
 
+function displayTimerTitle() {
+  var description = document.querySelector('.timer-title')
+  description.innerText = `${activitiesArray[0].description}`;
 }

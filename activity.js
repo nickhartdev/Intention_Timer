@@ -10,7 +10,35 @@ class Activity {
 
 
   startTimer() {
-    countdown();
+    var minutes = this.minutes;
+    var seconds = this.seconds;
+    var countdownClock = document.querySelector('.countdown-clock');
+    var countdownTime = setInterval(countdown, 1000);
+
+    function countdown() {
+      countdownClock.innerHTML = minutes + ':' + seconds;
+      addZeroes(minutes, seconds);
+      countdownSeconds();
+      countdownMinutes();
+      if (countdownClock.innerHTML === '00:00') {
+        clearInterval(countdownTime);
+        alert('YOU DID IT');
+      }
+    }
+
+    function countdownSeconds() {
+      if (seconds > 0) {
+        seconds--;
+      } else {
+        seconds = 59;
+      }
+    }
+
+    function countdownMinutes() {
+      if (seconds === 59) {
+        minutes--;
+      }
+    }
 
   }
 
