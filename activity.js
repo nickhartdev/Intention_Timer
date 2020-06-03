@@ -14,6 +14,7 @@ class Activity {
     var countdownClock = document.querySelector('.countdown-clock');
     var countdownTime = setInterval(countdown, 1000);
 
+    startButton.disabled = true;
     function countdown() {
       countdownClock.innerHTML = minutes + ':' + seconds;
       addZeroes(minutes, seconds);
