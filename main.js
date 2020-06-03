@@ -9,7 +9,7 @@ var minuteError = document.querySelector('.minute-error-message');
 var secondError = document.querySelector('.second-error-message');
 var countdownClock = document.querySelector('.countdown-clock');
 var activitiesArray = [];
-
+var category = "";
 activityButtons.addEventListener('click', activateButtons);
 submitButton.addEventListener('click', startActivity);
 startButton.addEventListener('click', activateTimer);
@@ -39,8 +39,10 @@ function activateButtons(event) {
       event.target.classList.add('active-exercise-button');
     }
   }
+  assignCategory(event);
   assignButtonColor();
 }
+
 function assignButtonColor() {
   if (event.target.id === 'study-button') {
     startButton.classList.add('active-study-button');
@@ -99,23 +101,26 @@ function hideForm() {
   countdownClock.innerHTML = `${activitiesArray[0].minutes}:${activitiesArray[0].seconds}`;
   addZeroes(activitiesArray[0].minutes, activitiesArray[0].seconds);
 }
-
-function createActivity() {
-  var category = '';
-  var newActivity = new Activity(category, activityDescriptionInput.value, minuteInput.value, secondInput.value);
-  var studyButton = document.querySelector('#study-button');
-  var meditateButton = document.querySelector('#meditate-button');
-  var exerciseButton = document.querySelector('#exercise-button');
-// how to do this without lines 94-99; pulling category from DOM
-  if (studyButton.classList.length === 2) {
+function assignCategory(event) {
+  if (event.target.id === 'study-button') {
     category = 'study';
-  } else if (meditateButton.classList.length === 2) {
+  } else if (event.target.id === 'meditate-button') {
     category = 'meditate';
-  } else if (exerciseButton.classList.length === 2) {
+  } else if (event.target.id === 'exercise-button') {
     category = 'exercise';
   }
+  console.log(category);
+}
+
+function createActivity(event) {
+  var newActivity = new Activity(category, activityDescriptionInput.value, minuteInput.value, secondInput.value);
+
+  // var studyButton = document.querySelector('#study-button');
+  // var meditateButton = document.querySelector('#meditate-button');
+  // var exerciseButton = document.querySelector('#exercise-button');
   activitiesArray.push(newActivity);
 }
+
 
 function addZeroes(minutes, seconds) {
   if (minutes < 10 && seconds < 10) {
@@ -137,7 +142,6 @@ function startActivity() {
 }
 
 function activateTimer() {
-  createActivity();
   activitiesArray[0].startTimer();
 }
 
