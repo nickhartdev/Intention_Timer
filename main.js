@@ -119,16 +119,27 @@ function startActivity() {
 function countdown() {
   setInterval(function() {
     countdownClock.innerHTML = `${activitiesArray[0].minutes}:${activitiesArray[0].seconds}`;
-    if (activitiesArray[0].seconds < 10) {
-    countdownClock.innerHTML= `${activitiesArray[0].minutes}:0${activitiesArray[0].seconds}`;
-    }else {
-    countdownClock.innerHTML= `${activitiesArray[0].minutes}:${activitiesArray[0].seconds}`;
-    }
+    addZeroToSeconds();
     // countdownClock.innerHTML = `${activitiesArray[0].minutes}:${activitiesArray[0].seconds}`
-    // console.log(activitiesArray[0].seconds);
-    activitiesArray[0].seconds > 0 ? activitiesArray[0].seconds-- : activitiesArray[0].seconds;
+    // // console.log(activitiesArray[0].seconds);
+    if (activitiesArray[0].minutes > 0) {
+    activitiesArray[0].seconds > 0 ? activitiesArray[0].seconds-- : activitiesArray[0].seconds = 59;
+    }
+    if (activitiesArray[0].seconds === 59) {
+      activitiesArray[0].minutes === 0 ? activitiesArray[0].minutes : activitiesArray[0].minutes--;
+    }
+    if (activitiesArray[0].minutes === 0) {
+      activitiesArray[0].seconds > 0 ? activitiesArray[0].seconds : activitiesArray[0].seconds--;
+    }
     // if (activitiesArray[0].seconds === 0) {
     //   return alert('hi');
     // }
   }, 1000)
+}
+function addZeroToSeconds() {
+  if (activitiesArray[0].seconds < 10) {
+  countdownClock.innerHTML= `${activitiesArray[0].minutes}:0${activitiesArray[0].seconds}`;
+  }else {
+  countdownClock.innerHTML= `${activitiesArray[0].minutes}:${activitiesArray[0].seconds}`;
+  }
 }
