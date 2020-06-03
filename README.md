@@ -33,3 +33,8 @@ With each attempt at refactoring came the opportunity to learn through trial and
   After a user fills out the New Activity form and clicks the **Start Activity** button, they are taken to an alternative page view with their activity description as the header, a timer, and a start button in view. When they click the *Start* button, the timer starts counting down. Once the timer hits 0 minutes and 0 seconds, an alert notifies users the timer has run out.  
   
   ![Running timer](assets/screenshots/runningtimer.png)
+
+### **Built With:**
+* Vanilla JavaScript
+* HTML
+* CSS
