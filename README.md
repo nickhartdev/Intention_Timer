@@ -1,9 +1,9 @@
 ## Intention_Timer
 
 ## Contributors
-- **Hanna Kim:** github.com/hannakim91
-- **Nick Hart:** github.com/nickhartdev
-- **Chadrick Dickerson:** github.com/chadrick-d-dev
+- **Hanna Kim:** https://github.com/hannakim91
+- **Nick Hart:** https://github.com/nickhartdev
+- **Chadrick Dickerson:** https://github.com/chadrick-d-dev
 ## Additional Links
 - **[Deployed Page](https://nickhartdev.github.io/Intention_Timer/)**
 - **[Project Board](https://github.com/nickhartdev/Intention_Timer/projects/1)**
