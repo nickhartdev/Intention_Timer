@@ -13,6 +13,18 @@ var activitiesArray = [];
 
 activityButtons.addEventListener('click', activateButtons);
 submitButton.addEventListener('click', startActivity);
+startButton.addEventListener('click', function() {
+  var countdown = setInterval(function() {
+    countdownClock.innerHTML = `${activitiesArray[0].minutes}:${activitiesArray[0].seconds}`;
+    addZeroes();
+    if (activitiesArray[0].minutes > 0) {
+      activitiesArray[0].seconds > 0 ? activitiesArray[0].seconds-- : activitiesArray[0].seconds = 59;
+      activitiesArray[0].seconds === 59 ? activitiesArray[0].minutes-- : activitiesArray[0].minutes;
+    } else {
+      activitiesArray[0].seconds > 0 ? activitiesArray[0].seconds-- : alert('very cautious WE DID IT'), clearInterval(countdown);
+    }
+  }, 1000);
+});
 minuteInput.addEventListener('keydown', function(event) {
   var invalidCharacters = [ 'e', 'E', '+', '-' , '.' ];
 
@@ -104,42 +116,27 @@ function createActivity() {
 function startActivity() {
   validateForm();
   if (validateCategory() === true && activityDescriptionInput.value.length > 0 && minuteInput.value.length > 0 && secondInput.value.length > 0) {
-    hideForm();
     createActivity();
     activitiesArray[0].startTimer();
-
+    hideForm();
   }
 }
-// direct the received values of minutes and seconds to appear in two digit format
-// direct the two digits to cycle in seconds from 59 to 00
-// when seconds hit 00 they go to 59
-//if seconds hit 00 subtract 01 from minutes
-//when minutes and seconds are both 00 the timer stops
-//when mintues and seconds are both 00 the start button text changes
-function countdown() {
-  setInterval(function() {
-    countdownClock.innerHTML = `${activitiesArray[0].minutes}:${activitiesArray[0].seconds}`;
-    addZeroToSeconds();
-    // countdownClock.innerHTML = `${activitiesArray[0].minutes}:${activitiesArray[0].seconds}`
-    // // console.log(activitiesArray[0].seconds);
-    if (activitiesArray[0].minutes > 0) {
-    activitiesArray[0].seconds > 0 ? activitiesArray[0].seconds-- : activitiesArray[0].seconds = 59;
-    }
-    if (activitiesArray[0].seconds === 59) {
-      activitiesArray[0].minutes === 0 ? activitiesArray[0].minutes : activitiesArray[0].minutes--;
-    }
-    if (activitiesArray[0].minutes === 0) {
-      activitiesArray[0].seconds > 0 ? activitiesArray[0].seconds : activitiesArray[0].seconds--;
-    }
-    // if (activitiesArray[0].seconds === 0) {
-    //   return alert('hi');
-    // }
-  }, 1000)
+
+
+
+function cancelTimer() {
+  var countdownFunction = setInterval(countdown, 1000);
+
+  clearInterval(countdownFunction);
+  return countdownFunction;
 }
-function addZeroToSeconds() {
-  if (activitiesArray[0].seconds < 10) {
-  countdownClock.innerHTML= `${activitiesArray[0].minutes}:0${activitiesArray[0].seconds}`;
-  }else {
-  countdownClock.innerHTML= `${activitiesArray[0].minutes}:${activitiesArray[0].seconds}`;
+
+function addZeroes() {
+    if (activitiesArray[0].minutes < 10 && activitiesArray[0].seconds < 10) {
+    countdownClock.innerHTML = `0${activitiesArray[0].minutes}:0${activitiesArray[0].seconds}`;
+    } else if (activitiesArray[0].seconds < 10) {
+    countdownClock.innerHTML = `${activitiesArray[0].minutes}:0${activitiesArray[0].seconds}`;
+    } else if (activitiesArray[0].minutes < 10) {
+    countdownClock.innerHTML = `0${activitiesArray[0].minutes}:${activitiesArray[0].seconds}`;
   }
 }

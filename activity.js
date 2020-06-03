@@ -10,8 +10,7 @@ class Activity {
 
 
   startTimer() {
-    countdown();
-
+    // countdownFunction();
   }
 
   markComplete() {}
