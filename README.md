@@ -1,23 +1,35 @@
-## Intention_Timer
+# Intention_Timer
+
+## Objective:
+
+**Intention Timer** is a group project designed to increase understanding of the fundamentals of JS, HTML, and CSS and how those three languages are interwoven to create a functioning webpage. Our group worked closely together to create a working countdown timer based on user inputs for minutes, seconds, and activity type.
+
+This project aligns with the goals set in our DTR to respect our individual needs for creating and maintaining healthy-positive habits that in turn help us learn better.
 
 ## Contributors
 - **Hanna Kim:** https://github.com/hannakim91
 - **Nick Hart:** https://github.com/nickhartdev
 - **Chadrick Dickerson:** https://github.com/chadrick-d-dev
+
 ## Additional Links
 - **[Deployed Page](https://nickhartdev.github.io/Intention_Timer/)**
 - **[Project Board](https://github.com/nickhartdev/Intention_Timer/projects/1)**
 - **[GitHub Link](https://github.com/nickhartdev/Intention_Timer)**
 - **[Team DTR](https://gist.github.com/nickhartdev/857df23059be59dc29b5751cd00fd2ad)**
+
 ## Successes
+
 - **Creating a responsive site from the ground up**: We were given screenshots of a comp to replicate, a few assets, a color palette, and nothing more. The experience of working as a team to recreate the comp largely from scratch was an amazing learning opportunity for all of us.
 - **Navigating a team dynamic**: Up until this point, our projects have either been done solo or with partners. This, being our first project being done with a group of three, was a great opportunity to practice efficient communication, collaboration, and project planning within a small team.
 - **Integrating JavaScript, HTML, and CSS**: While our last project was done with basic DOM manipulation, this was the first time we built all three components of the site from the ground up. Getting to see how they all fit together helped build our understanding of a fuller picture of front-end development.
+
 ## Challenges
+
 - **Refactoring**: Refactoring some of our first iteration of functions was challenging at times.
 With each attempt at refactoring came the opportunity to learn through trial and error powered by critical thinking and group discussion.
 - **Timer Functionality**: We ran into some roadblocks along the way while creating functionality for the countdown timer. One issue was knowing where to place the `setInterval()` and corresponding `clearInterval()` functions. We had to play around with creating different iterations of related functions several times to get the timer to count down and stop successfully.
 - **CSS Styling for Responsiveness**: We found it took a lot of trial and error with CSS styling to maintain page responsiveness for the page we initially created. The most difficult aspect was getting our styles to display desirably for the size of a mobile device.
+
 ## Progression
 ### **Layout**
   We built a static comp using HTML and CSS according to project spec's with colors and assets provided.
