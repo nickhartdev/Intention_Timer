@@ -10,23 +10,20 @@ var secondError = document.querySelector('.second-error-message');
 var countdownClock = document.querySelector('.countdown-clock');
 var activitiesArray = [];
 var category = "";
+
 activityButtons.addEventListener('click', activateButtons);
 submitButton.addEventListener('click', startActivity);
 startButton.addEventListener('click', activateTimer);
-minuteInput.addEventListener('keydown', function(event) {
+minuteInput.addEventListener('keydown', makeInvalid);
+secondInput.addEventListener('keydown', makeInvalid);
+
+function makeInvalid(event) {
   var invalidCharacters = [ 'e', 'E', '+', '-' , '.' ];
 
   if (invalidCharacters.includes(event.key)) {
     event.preventDefault();
   }
-});
-secondInput.addEventListener('keydown', function(event) {
-  var invalidCharacters = [ 'e', 'E', '+', '-' , '.' ];
-
-  if (invalidCharacters.includes(event.key)) {
-    event.preventDefault();
-  }
-});
+}
 
 function activateButtons(event) {
   for (var i = 0; i < buttonArray.length; i++) {
@@ -101,6 +98,7 @@ function hideForm() {
   countdownClock.innerHTML = `${activitiesArray[0].minutes}:${activitiesArray[0].seconds}`;
   addZeroes(activitiesArray[0].minutes, activitiesArray[0].seconds);
 }
+
 function assignCategory(event) {
   if (event.target.id === 'study-button') {
     category = 'study';
@@ -115,9 +113,6 @@ function assignCategory(event) {
 function createActivity(event) {
   var newActivity = new Activity(category, activityDescriptionInput.value, minuteInput.value, secondInput.value);
 
-  // var studyButton = document.querySelector('#study-button');
-  // var meditateButton = document.querySelector('#meditate-button');
-  // var exerciseButton = document.querySelector('#exercise-button');
   activitiesArray.push(newActivity);
 }
 
