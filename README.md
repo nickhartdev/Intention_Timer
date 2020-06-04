@@ -1,15 +1,15 @@
 # Intention_Timer
 
-## Objective:
+## Objective
 
 **Intention Timer** is a group project designed to increase understanding of the fundamentals of JS, HTML, and CSS and how those three languages are interwoven to create a functioning webpage. Our group worked closely together to create a working countdown timer based on user inputs for minutes, seconds, and activity type.
 
-This project aligns with the goals set in our DTR to respect our individual needs for creating and maintaining healthy-positive habits that in turn help us learn better.
+This project aligns with the goals set in our DTR to respect our individual needs for creating and maintaining health-positive habits that in turn help us learn more effectively.
 
 ## Contributors
-- **Hanna Kim:** https://github.com/hannakim91
-- **Nick Hart:** https://github.com/nickhartdev
-- **Chadrick Dickerson:** https://github.com/chadrick-d-dev
+- [**Hanna Kim:**](https://github.com/hannakim91)
+- [**Nick Hart:**](https://github.com/nickhartdev)
+- [**Chadrick Dickerson:**](https://github.com/chadrick-d-dev)
 
 ## Additional Links
 - **[Deployed Page](https://nickhartdev.github.io/Intention_Timer/)**
