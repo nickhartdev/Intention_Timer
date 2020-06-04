@@ -134,7 +134,7 @@ function addZeroes(minutes, seconds) {
 
 function startActivity() {
   validateForm();
-  if (validateCategory() === true && activityDescriptionInput.value.length > 0 && minuteInput.value.length > 0 && secondInput.value.length > 0) {
+  if (validateCategory() === true && activityDescriptionInput.value.length > 0 && 3 > minuteInput.value.length > 0 && 3 > secondInput.value.length > 0) {
     createActivity();
     displayTimerTitle();
     hideForm();

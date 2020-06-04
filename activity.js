@@ -22,7 +22,7 @@ class Activity {
       countdownMinutes();
       if (countdownClock.innerHTML === '00:00') {
         clearInterval(countdownTime);
-        alert('YOU DID IT');
+        startButton.innerText = "COMPLETE!";
       }
     }
 
