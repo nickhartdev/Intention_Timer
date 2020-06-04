@@ -7,9 +7,9 @@
 This project aligns with the goals set in our DTR to respect our individual needs for creating and maintaining health-positive habits that in turn help us learn more effectively.
 
 ## Contributors
-- [**Hanna Kim:**](https://github.com/hannakim91)
-- [**Nick Hart:**](https://github.com/nickhartdev)
-- [**Chadrick Dickerson:**](https://github.com/chadrick-d-dev)
+- [**Hanna Kim**](https://github.com/hannakim91)
+- [**Nick Hart**](https://github.com/nickhartdev)
+- [**Chadrick Dickerson**](https://github.com/chadrick-d-dev)
 
 ## Additional Links
 - **[Deployed Page](https://nickhartdev.github.io/Intention_Timer/)**
